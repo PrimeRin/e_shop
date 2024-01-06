@@ -30,9 +30,6 @@ ENV MONGODB_URI="mongodb+srv://prime4:nrtG8V83tsZ6xzPc@cluster0.mwaqbau.mongodb.
 # Precompile bootsnap code for faster boot times
 RUN bundle exec bootsnap precompile --gemfile app/ lib/
 
-# Precompile assets
-RUN RAILS_ENV=production bundle exec rake assets:precompile
-
 # Entrypoint prepares the database.
 ENTRYPOINT ["/rails/bin/docker-entrypoint"]
 
