@@ -5,14 +5,17 @@ default: &default
 
 development:
   <<: *default
+  adapter: postgresql
   database: e_shop_app_development
 
 test:
   <<: *default
+  adapter: postgresql
   database: e_shop_app_test
 
 production:
-  url: <%= ENV["MY_APP_DATABASE_URL"] %>
+  adapter: postgresql
+  url: <%= ENV["DATABASE_URL"] %>
 
 #production:
 #  <<: *default
