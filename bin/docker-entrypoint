@@ -4,6 +4,7 @@
 if [ "${*}" == "./bin/rails server" ]; then
  ./bin/rails db:create
  ./bin/rails db:migrate
+ ./bin/rails assets:precompile
 fi
 
 exec "${@}"
